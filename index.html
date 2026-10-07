@@ -279,14 +279,14 @@ td.nd{color:var(--n400);font-style:italic}
 .hyp dd{margin:3px 0 0;font-size:13.8px;color:var(--n700);line-height:1.5}
 
 .scen{background:var(--neutral-0);border:1px solid var(--n200);border-radius:12px;padding:19px;border-top:4px solid}
-.scen.base{border-top-color:var(--green-500)}
-.scen.acc{border-top-color:var(--lime)}
-.scen.pre{border-top-color:var(--warn)}
+.scen.gpa-base{border-top-color:var(--green-500)}
+.scen.gpa-acc{border-top-color:var(--lime)}
+.scen.gpa-pre{border-top-color:var(--warn)}
 .scen h4{font-size:16.5px;font-weight:700}
 .scen .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--n500)}
-.scen.base .k{color:var(--green-700)}
-.scen.acc .k{color:#6B861A}
-.scen.pre .k{color:#8A5A0F}
+.scen.gpa-base .k{color:var(--green-700)}
+.scen.gpa-acc .k{color:#6B861A}
+.scen.gpa-pre .k{color:#8A5A0F}
 .scen p{margin-top:9px;font-size:14.2px;color:var(--n700);line-height:1.52}
 .scen .imp{margin-top:13px;padding-top:12px;border-top:1px solid var(--n100);font-size:13.8px;color:var(--n800);line-height:1.5}
 .scen .imp b{color:var(--green-700)}
@@ -345,9 +345,9 @@ td.nd{color:var(--n400);font-style:italic}
 .step.is-agent .v{color:#fff;font-weight:600}
 .step.is-result .k i{background:var(--green-500);color:#04302B}
 .step.is-result .k span{color:var(--green-300)}
-.pre{margin-top:auto;padding-top:16px;border-top:1px solid rgba(186,244,233,.18)}
-.pre .lb{font-size:9.8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--lime)}
-.pre p{margin-top:7px;font-size:13.6px;color:var(--green-100);line-height:1.5;max-width:70ch}
+.gpa-precond{margin-top:auto;padding-top:16px;border-top:1px solid rgba(186,244,233,.18)}
+.gpa-precond .lb{font-size:9.8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--lime)}
+.gpa-precond p{margin-top:7px;font-size:13.6px;color:var(--green-100);line-height:1.5;max-width:70ch}
 .anim > *{animation:stepin .34s var(--ease) both}
 .anim > *:nth-child(2){animation-delay:.05s}
 .anim > *:nth-child(3){animation-delay:.1s}
@@ -1499,7 +1499,7 @@ td.nd{color:var(--n400);font-style:italic}
 
     <div class="body">
       <div class="g3">
-        <div class="scen base">
+        <div class="scen gpa-base">
           <div class="k num">Escenario base</div>
           <h4>El pipeline hotelero sostiene la obra nueva y el parque instalado crece</h4>
           <p>La inversión hotelera sigue concentrada en el Caribe mexicano y el Pacífico de lujo; el parque
@@ -1509,7 +1509,7 @@ td.nd{color:var(--n400);font-style:italic}
           que nadie lo decida. El costo de servir crece a la misma velocidad que la línea SMART, y la pregunta
           de rentabilidad por producto se vuelve urgente antes que estratégica.</div>
         </div>
-        <div class="scen acc">
+        <div class="scen gpa-acc">
           <div class="k num">Escenario de aceleración</div>
           <h4>La automatización se vuelve requisito de proyecto, no opción</h4>
           <p>Eficiencia energética, control remoto y sanitización alternativa pasan a formar parte del pliego
@@ -1519,7 +1519,7 @@ td.nd{color:var(--n400);font-style:italic}
           beneficio de Rewards y se vuelve una condición de venta. La ventaja va para quien pueda certificar,
           medir y comprobar la capacidad instalada de su red de distribuidores, no solo su volumen de compra.</div>
         </div>
-        <div class="scen pre">
+        <div class="scen gpa-pre">
           <div class="k num">Escenario de presión</div>
           <h4>El costo de importar sube otra vez y el canal pide más apoyo</h4>
           <p>Nuevos ajustes arancelarios o de tipo de cambio encarecen el origen asiático; en paralelo, la
@@ -2188,7 +2188,7 @@ td.nd{color:var(--n400);font-style:italic}
     }).join("");
     det.innerHTML='<h3>'+esc(a.t)+'</h3><p class="sum">'+esc(a.sum)+'</p>'+
       '<div class="flow anim">'+steps+'</div>'+
-      '<div class="pre"><span class="lb">Condición previa de datos</span><p>'+esc(a.pre)+'</p></div>';
+      '<div class="gpa-precond"><span class="lb">Condición previa de datos</span><p>'+esc(a.pre)+'</p></div>';
     list.querySelectorAll(".agent-btn").forEach(function(b,k){
       b.setAttribute("aria-selected", k===i?"true":"false");
       b.tabIndex = k===i?0:-1;
